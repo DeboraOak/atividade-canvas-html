@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao 5-b</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="300"> </canvas>
+
+    <script>
+        let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');
+        ctx.lineWidth = 2;
+
+        for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 3; j++) {
+                ctx.beginPath();
+                ctx.rect(45 + (i * 70), 45 + (j * 70), 50, 50);
+                ctx.stroke();
+                ctx.fillStyle = 'white';
+                ctx.strokeStyle = 'blue';
+                ctx.fill();
+                ctx.closePath();
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(70 + (i * 70), 56 + (j * 70));
+                ctx.lineTo(85 + (i * 70), 82 + (j * 70));
+                ctx.lineTo(55 + (i * 70), 82 + (j * 70));
+                ctx.strokeStyle = "purple";
+                ctx.fill();
+                ctx.closePath();
+                ctx.stroke();
+            }
+        }
+
+    </script>
+</body>
+
+</html>
